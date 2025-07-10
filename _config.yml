@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Steve's data science portfolio
+title: Stephen McAteer's data science portfolio
 email: s.g.mcateer@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Stephen McAteer"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Father of two, husband of one. PhD in mathematical physics. Lead data scientist at the Victorian Auditor-General's Office. Long suffering Essendon supporter."
+  bio    : "Father of two, husband of one. Lead data scientist at the Victorian Auditor-General's Office. PhD in mathematical physics. Long suffering Bombers supporter."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
