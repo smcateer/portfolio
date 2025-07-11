@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Stephen McAteer"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Father of two, husband of one. Lead Data Scientist at the Victorian Auditor-General's Office. PhD in mathematical physics. Long suffering Bombers supporter."
+  bio    : "Father of two, husband of one. Senior Manager, Data Science at the Victorian Auditor-General's Office. PhD in mathematical physics. Long suffering Bombers supporter."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
