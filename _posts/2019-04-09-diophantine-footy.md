@@ -23,7 +23,7 @@ Also also note that the right hand side has `b-6` in the denominator, so for `g`
 
 We can therefore proceed by brute-force and check all allowed values of \\(b\\):
 ```
-b =  7, g = b/(b-6) = 7/1 = 7
+b =  7, g = b/(b-6) =  7/1 = 7
 b =  8, g = b/(b-6) =  8/2 = 4 
 b =  9, g = b/(b-6) =  9/3 = 3 
 b = 10, g = b/(b-6) = 10/4 
