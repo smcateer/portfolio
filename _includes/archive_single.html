@@ -1,0 +1,15 @@
+<p class="page__meta">
+  {{ post.date | date: "%b %-d, %Y" }}
+  {% if post.categories %}
+    | {{ site.labels.categories | default: "Categories" }}:
+    {% for c in post.categories %}
+      <a href="{{ '/categories/' | relative_url }}{{ c | slugify }}/">{{ c }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  {% endif %}
+  {% if post.tags %}
+    | Tagged:
+    {% for t in post.tags %}
+      <a href="{{ '/tags/' | relative_url }}{{ t | slugify }}/">{{ t }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  {% endif %}
+</p>
