@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Enhanced AFL ladder"
 permalink: super-ladder/
 date: 2018-07-29
