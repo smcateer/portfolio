@@ -1,5 +1,5 @@
 ---
-title: "Sexual Harassment in Local Government (audit report)"
+title: "Sexual Harassment in Local Government"
 date: 2020-12-09
 permalink: sexual-harassment-local-gov/
 published: true
