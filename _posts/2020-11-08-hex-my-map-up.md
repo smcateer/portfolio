@@ -5,7 +5,7 @@ permalink: hex-my-map-up/
 published: true
 categories:
     - personal project
-tags: [ "mapping", "hexagonal tiling", "hexagon", "data viz" ]
+tags: [ "mapping", "hexagonal tiling", "dataviz" ]
 ---
 
 So I got all inspired by some of the US election data viz, in particular some of the mapping of states as abstract shapes with areas proportional to the number fo college votes they have. The issue is that without doing this, you see a lot less blue (Democrat) on a regular map than there really is (in terms of number of votes). This is due to many of the densely populated states tending to be blue-leaning (think north-east).
