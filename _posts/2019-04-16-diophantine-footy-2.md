@@ -10,7 +10,7 @@ tags: [ "footy", "australian rules football", "maths", "diophantine equations", 
 
 BTW, this is a follow up to [diophantine footy](https://smcateer.github.io/portfolio/diophantine-footy/) ... read that first for context.
 
-So I was thinking about what would happen if a goal was worth an arbitrary number of points $p$ (rather than 6) - the number of solutions for \\(p = 6\\) struck me as a bit high. So I scratched together the following bit of Python to count solutions. (NB, we are not counting the 0.0 (0) solution here, but it's a solution for any value of \\(p\\)).
+So I was thinking about what would happen if a goal was worth an arbitrary number of points `p` (rather than 6) - the number of solutions for `p = 6` struck me as a bit high. So I scratched together the following bit of Python to count solutions. (NB, we are not counting the 0.0 (0) solution here, but it's a solution for any value of \\(p\\)).
 
 ``` python
 # we want to consider a range of points per goal (p) (regular footy is 6)
