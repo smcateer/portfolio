@@ -87,6 +87,7 @@ defaults:
       layout: single
       author_profile: true
       # read_time: true
+      math: true
       show_date: true
       comments: false
       share: true

@@ -3,7 +3,6 @@ title: "Diophantine footy 2: generalised footy"
 date: 2019-07-25
 permalink: diophantine-footy-2/
 published: true
-math: true
 categories:
   - personal project
 tags: [ "footy", "australian rules football", "maths", "diophantine equations", ]
