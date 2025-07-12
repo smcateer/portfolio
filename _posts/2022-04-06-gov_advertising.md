@@ -1,7 +1,7 @@
 ---
-title: "Government Advertising (audit report)"
+title: "Government Advertising"
 date: 2022-04-06
-permalink: /government-advertising/
+permalink: government-advertising/
 published: true
 categories:
     - performance audit
