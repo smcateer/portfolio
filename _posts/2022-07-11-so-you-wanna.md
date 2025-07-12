@@ -1,9 +1,9 @@
 ---
-title: "Post: Link"
+title: "So you wanna data science?"
 date: 2022-07-11
 permalink: so-you-wanna-data-science/
 categories:
-  - link
+  - linkedin article
 tags:
   - data science skills
   - recruitment
