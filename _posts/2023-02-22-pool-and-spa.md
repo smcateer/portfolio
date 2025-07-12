@@ -1,13 +1,15 @@
 ---
-categories:
-    - performance audit
-    - vago
 title: "Regulating Private Pool and Spa Safety"
 date: 2023-02-22
 permalink: /pool-and-spa/
-img: xxxx
 published: true
-tags: [ "survey", "compliance", "safety" ]
+categories:
+    - performance audit
+    - vago
+tags:
+    - survey
+    - compliance
+    - safety
 ---
 
 The data science contribution to this audit focused on designing a council survey that would generate clear, audit-relevant insights. We adopted a *reverse-engineering* method using hypothetical findings as a way to test the utility of each proposed survey question. For each draft question, we asked: *What sentence, chart, or conclusion would this enable us to write in the final report?* If the draft question didn't do the heavy-lifting we needed it to, we refined it. This approach ensured that each item helped us address the audit objective and led to clean, usable outputs.
