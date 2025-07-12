@@ -4,7 +4,7 @@ date: 2019-10-14
 permalink: bootstrap-finite/
 published: true
 categories:
-    - article
+    - note
 tags: [ "bootsptap", "statisitcs", "parameter estimation", "nonparametric statistics" ]
 ---
 
