@@ -1,15 +1,31 @@
-<p class="page__meta">
-  {{ post.date | date: "%b %-d, %Y" }}
-  {% if post.categories %}
-    | {{ site.labels.categories | default: "Categories" }}:
-    {% for c in post.categories %}
-      <a href="{{ '/categories/' | relative_url }}{{ c | slugify }}/">{{ c }}</a>{% unless forloop.last %}, {% endunless %}
-    {% endfor %}
-  {% endif %}
-  {% if post.tags %}
-    | Tagged:
-    {% for t in post.tags %}
-      <a href="{{ '/tags/' | relative_url }}{{ t | slugify }}/">{{ t }}</a>{% unless forloop.last %}, {% endunless %}
-    {% endfor %}
-  {% endif %}
-</p>
+<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+  <h2 class="archive__item-title no_toc" itemprop="headline">
+    <a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a>
+  </h2>
+
+  {%- if post.excerpt -%}
+    <div class="archive__item-excerpt" itemprop="description">
+      {{ post.excerpt | markdownify }}
+    </div>
+  {%- endif -%}
+
+  <!-- BEGIN CUSTOM: Add date, categories, and tags under post excerpt -->
+  <p class="archive__item-meta">
+    {{ post.date | date: "%b %-d, %Y" }}
+
+    {%- if post.categories -%}
+      &nbsp;| {{ site.labels.categories | default: "Categories" }}:
+      {%- for category in post.categories -%}
+        <a href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- if post.tags -%}
+      &nbsp;| Tags:
+      {%- for tag in post.tags -%}
+        <a href="{{ site.baseurl }}/tag/{{ tag | slugify }}/">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+      {%- endfor -%}
+    {%- endif -%}
+  </p>
+  <!-- END CUSTOM -->
+</article>
