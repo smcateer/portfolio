@@ -22,16 +22,14 @@ Also note that we need to have `2(b-6) <= b` implies `b \le 12` because otherwis
 Also also note that the right hand side has `b-6` in the denominator, so for `g` to be positive (and finite), we need `b>6`.
 
 We can therefore proceed by brute-force and check all allowed values of \\(b\\):
-{% raw %}
-\begin{align}
-b = 7, g = \frac{b}{b-6} &= \frac{7}{1} = 7 \\\\\\\\
-b = 8, g = \frac{b}{b-6} &= \frac{8}{2} = 4 \\\\\\\\
-b = 9, g = \frac{b}{b-6} &= \frac{9}{3} = 3 \\\\\\\\
-b = 10, g = \frac{b}{b-6} &= \frac{10}{4} \\\\\\\\
-b = 11, g = \frac{b}{b-6} &= \frac{11}{5} \\\\\\\\
-b = 12, g = \frac{b}{b-6} &= \frac{12}{6} = 2
-\end{align}
-{% endraw %}
+```
+b =  7, g = b/(b-6) = 7/1 = 7
+b =  8, g = b/(b-6) =  8/2 = 4 
+b =  9, g = b/(b-6) =  9/3 = 3 
+b = 10, g = b/(b-6) = 10/4 
+b = 11, g = b/(b-6) = 11/5 
+b = 12, g = b/(b-6) = 12/6 = 2
+```
 Which gives us the solutions noted above, plus one new one 2-12-24 (the cases `b=10,11` don't provide us with whole goals). And that's it. QED :)
 
 Here is a plot of goals versus behinds, where you can see the integer solutions:
