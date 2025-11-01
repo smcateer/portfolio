@@ -14,4 +14,4 @@ tags: ["performance audit", "vago", "public administration" ]
 
 For this engagement, I created an interactive dashboard that allows users to explore Victorian public service spending on contractors and consultants from 2017–18 to 2022–23. It allows them to explore trends across departments, compare reliance on external labour, and identify major vendors and shifts in expenditure patterns over time.
 
-To explore the dashboard see read the [full report](https://www.audit.vic.gov.au/report/contractors-and-consultants-victorian-public-service-spending).
+Explore the dashboard [here](https://www.audit.vic.gov.au/report/contractors-and-consultants-victorian-public-service-spending).
