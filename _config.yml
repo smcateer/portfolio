@@ -23,6 +23,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 github_username: smcateer
 minimal_mistakes_skin: default
 search: true
+favicon: /assets/images/bio-photo.jpg
 
 # Build settings
 markdown: kramdown
