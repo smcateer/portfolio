@@ -10,7 +10,7 @@ tags: ["waste management", "recycling", "environment", "interactive visualizatio
 ---
 
 <iframe
-  src="https://www.audit.vic.gov.au/sites/default/files/2024-25/Recycling%20resources%20from%20waste/fig_9.htmlhttps://example.com"
+  src="https://www.audit.vic.gov.au/sites/default/files/2024-25/Recycling%20resources%20from%20waste/fig_9.html"
   width="600"
   height="400"
   style="border:0;"
