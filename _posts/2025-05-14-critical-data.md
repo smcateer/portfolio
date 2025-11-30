@@ -2,7 +2,7 @@
 title: "Quality of Victoria's Critical Data Assets"
 date: 2025-04-03
 permalink: critical-data/
-published: false # SET true when ready
+published: true # SET true when ready
 categories:
     - performance audit
     - vago
