@@ -15,4 +15,4 @@ It was a tough call, and caused a lot of disappointment for the analyst, but in 
 
 There were however side benefits from the work done. The domain knowledge gained by the analyst has already been applied to other audits in the transport space, and the insights from the analysis have informed our annual planning process.
 
-For details see [the full report](https://www.audit.vic.gov.au/report/managing-disruptions-affecting-victorias-public-transport-network).
+Click here to read [the report](https://www.audit.vic.gov.au/report/managing-disruptions-affecting-victorias-public-transport-network).
