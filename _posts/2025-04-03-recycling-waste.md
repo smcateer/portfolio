@@ -15,6 +15,6 @@ The following chart is an example of one of the interactive visualizations creat
 
 **Figure 10: Total waste recovered and entering landfill from households and businesses, 2022–23**
  
-<iframe src="https://www.audit.vic.gov.au/sites/default/files/2024-25/Recycling%20resources%20from%20waste/fig_10.html" width="100%" style="border:0;"></iframe>
+<iframe src="https://www.audit.vic.gov.au/sites/default/files/2024-25/Recycling%20resources%20from%20waste/fig_10.html" width="100%" height="100%" style="border:0;"></iframe>
 
 To play with all the embedded interactive visualizations see [the full report](https://www.audit.vic.gov.au/report/recycling-resources-waste).
