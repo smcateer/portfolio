@@ -2,7 +2,7 @@
 title: "Financial audit dashboards"
 date: 2025-11-30
 permalink: financial-audit-dashboards/
-published: false # SET true when ready
+published: true
 categories:
     - results of financial audits
     - vago

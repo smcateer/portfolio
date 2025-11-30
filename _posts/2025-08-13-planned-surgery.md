@@ -2,7 +2,7 @@
 title: "Planned Surgery in Victoria"
 date: 2025-08-13
 permalink: planned-surgery/
-published: false # SET true when ready
+published: true
 categories:
     - performance audit
     - vago
