@@ -1,5 +1,5 @@
 ---
-title: "Managing Disruptions Affecting Victoria's Public Transport Network
+title: "Managing Disruptions Affecting Victoria's Public Transport Network"
 date: 2025-05-03
 permalink: disruptions/
 published: true
