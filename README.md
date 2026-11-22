@@ -44,7 +44,7 @@ Use these Cloudflare Pages settings:
 
 - Framework preset: Jekyll
 - Root directory: repository root
-- Build command: `printf 'url: "%s"\\nbaseurl: ""\\n' "$CF_PAGES_URL" > _cloudflare.yml && bundle exec jekyll build --config _config.yml,_cloudflare.yml`
+- Build command: `printf 'url: "%s"\nbaseurl: ""\n' "$CF_PAGES_URL" > _cloudflare.yml && bundle exec jekyll build --config _config.yml,_cloudflare.yml`
 - Build output directory: `_site`
 - Build environment variable: `RUBY_VERSION=3.1.3` (or another supported Ruby 3.1 release)
 
