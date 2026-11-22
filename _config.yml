@@ -8,7 +8,7 @@ favicon: "/assets/images/sm_favicon_circle.ico"
 # the refactor/minimal-jekyll branch is intended for isolated previews.
 markdown: kramdown
 permalink: /:categories/:title/
-paginate: 5
+paginate: 6
 paginate_path: "/page:num/"
 timezone: Australia/Melbourne
 
