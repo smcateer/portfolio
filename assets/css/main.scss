@@ -78,6 +78,17 @@ samp,
   font-weight: 400;
 }
 
+// Search is the only masthead action. Keep the theme's search-toggle
+// class so its existing show/hide JavaScript works unchanged.
+.greedy-nav .search__toggle {
+  font-family: $portfolio-heading-font;
+  font-size: 1em;
+  font-weight: 400;
+  white-space: nowrap;
+  padding-inline: 0;
+  margin-inline-end: 0;
+}
+
 // Complete article titles, both on post pages and in archive listings.
 .page__title,
 .page__title a,
