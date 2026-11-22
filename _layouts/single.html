@@ -9,7 +9,7 @@ layout: default
     {% endif %}
   </header>
   <div class="post-body">{{ content }}</div>
-  {% if page.collection == 'posts' or page.categories.size > 0 or page.tags.size > 0 %}
+  {% if page.date %}
     {% include taxonomy.html %}
     {% unless page.share == false %}{% include share.html %}{% endunless %}
     {% unless page.related == false %}{% include related.html %}{% endunless %}

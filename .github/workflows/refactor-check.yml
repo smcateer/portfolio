@@ -1,0 +1,35 @@
+name: Refactor Jekyll build check
+on:
+  push:
+    branches:
+      - refactor/minimal-jekyll
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build
+      - name: Verify required routes
+        run: |
+          test -f _site/index.html
+          test -f _site/posts/index.html
+          test -f _site/categories/index.html
+          test -f _site/tags/index.html
+          test -f _site/search.json
+          test -f _site/assets/css/site.css
+          test -f _site/assets/js/theme.js
+          test -f _site/assets/monolith/index.html
+          grep -q "colour-mode" _site/index.html
+          grep -q "site-search" _site/index.html

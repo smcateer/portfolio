@@ -1,6 +1,7 @@
 {% assign related_count = 0 %}
+{% assign candidates = site.related_posts | default: site.posts %}
 {% capture related_posts %}
-  {% for post in site.related_posts %}
+  {% for post in candidates %}
     {% if post.url != page.url and related_count < 4 %}
       <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
       {% assign related_count = related_count | plus: 1 %}
