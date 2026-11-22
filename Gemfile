@@ -1,10 +1,11 @@
 source "https://rubygems.org"
 
-# GitHub Pages-compatible plugins and versions.
-gem "github-pages", group: :jekyll_plugins
+# Standalone portfolio: avoid the github-pages meta-gem, which loads
+# unrelated Jekyll themes/plugins (including jekyll-theme-primer).
+gem "jekyll", "~> 3.10"
 gem "webrick"
 
 group :jekyll_plugins do
-  gem "jekyll-paginate"
-  gem "jekyll-sitemap"
+  gem "jekyll-paginate", "~> 1.1"
+  gem "jekyll-sitemap", "~> 1.4"
 end
