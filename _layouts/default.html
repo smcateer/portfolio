@@ -29,13 +29,13 @@
   <a class="skip-link" href="#main">Skip to content</a>
   {% include header.html %}
   {% include search.html %}
-  <div class="site-shell">
-    {% unless page.author_profile == false %}
-      {% include bio.html %}
-    {% endunless %}
+  <div class="site-shell{% if page.author_profile == false %} site-shell--no-bio{% endif %}">
     <main id="main" class="site-main" tabindex="-1">
       {{ content }}
     </main>
+    {% unless page.author_profile == false %}
+      {% include bio.html %}
+    {% endunless %}
   </div>
   {% include footer.html %}
   <script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>

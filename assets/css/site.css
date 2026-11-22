@@ -136,10 +136,13 @@ strong,b { font-weight: 400; font-style: italic; }
   margin: 0 auto; display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
   align-items: start; gap: clamp(1.5rem, 4vw, 4rem);
 }
-.site-main { min-width: 0; max-width: 62rem; }
+.site-main { min-width: 0; max-width: 62rem; grid-column: 2; grid-row: 1; }
+.site-shell--no-bio .site-main { grid-column: 1 / -1; }
 .site-bio {
   font: 400 .93rem/1.55 var(--body-font);
   min-width: 0;
+  grid-column: 1;
+  grid-row: 1;
 }
 .bio-photo { display: block; width: 50%; height: auto; margin: 0 0 1rem; }
 .bio-copy p { margin-bottom: 1.3em; }
@@ -231,7 +234,7 @@ strong,b { font-weight: 400; font-style: italic; }
 .post-taxonomy { border-top: 1px solid var(--rule); padding-top: 1rem; }
 .post-taxonomy p { margin: 0 0 .4rem; }
 .taxonomy-label { font-family: var(--ui-font); }
-.post-taxonomy a { text-decoration: underline; text-underline-offset: .15em; }
+.post-taxonomy a, .post-taxonomy a:hover { text-decoration: none; }
 .share-block { border-top: 1px solid var(--rule); padding-top: 1rem; }
 .share-block .section-signpost,.related-posts .section-signpost { font-size: 1.3rem; margin-bottom: .75rem; }
 .share-links { margin: 0; }
@@ -316,18 +319,19 @@ strong,b { font-weight: 400; font-style: italic; }
 @media (max-width: 750px) {
   /* Bartle is unusually wide: use a mobile scale, not the desktop minimum. */
   .post-card-title {
-    font-size: clamp(1.05rem, 3.65vw, 1.45rem);
+    font-size: clamp(.95rem, 3.5vw, 1.4rem);
     line-height: 1.16;
   }
   .post-title {
-    font-size: clamp(1.3rem, 4.6vw, 1.95rem);
+    font-size: clamp(1.15rem, 4.2vw, 1.8rem);
     line-height: 1.14;
   }
   .post-card-title, .post-title {
     overflow-wrap: anywhere;
   }
-  .site-shell { grid-template-columns: 1fr; gap: 2rem; }
-  .site-bio { max-width: 38rem; }
+  .site-shell { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .site-main, .site-shell--no-bio .site-main { grid-column: 1; grid-row: 1; }
+  .site-bio { grid-column: 1; grid-row: 2; max-width: 38rem; }
   .bio-photo { width: min(50%, 11rem); }
   .header-inner { flex-wrap: wrap; }
   .header-actions { margin-left: auto; }
