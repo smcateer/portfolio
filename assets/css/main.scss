@@ -149,6 +149,97 @@ samp,
   font-family: $portfolio-body-font;
 }
 
+// Consistent typography across theme machinery. Minimal Mistakes otherwise
+// adds bold Zalando to dates, pagination, buttons, breadcrumbs and other UI.
+// Metadata including "Updated:" is interface text, not body copy.
+.page__meta,
+.page__meta a,
+.page__date,
+.page__date strong,
+.page__date time,
+.breadcrumbs,
+.breadcrumbs .current,
+.pagination,
+.pagination ul,
+.pagination li a,
+.pagination--pager,
+.nav__list,
+.nav__list label,
+.nav__list .active,
+.toc,
+.toc__menu,
+.toc__menu a,
+.btn,
+.masthead__menu-item--lg,
+.author__urls,
+.author__urls a,
+.page__footer,
+.page__footer-follow,
+.page__footer-follow li,
+.page__footer-follow a,
+.page__footer-follow strong,
+.page__footer-copyright,
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus,
+.required,
+th,
+.page__content dt {
+  font-family: $portfolio-heading-font;
+  font-weight: 400;
+}
+
+// The actual tag/category chips are content, not their UI labels.
+.page__taxonomy .page__taxonomy-item,
+.page__taxonomy .page__taxonomy-item a {
+  font-family: $portfolio-body-font;
+  font-weight: 400;
+}
+
+// Every heading is Bogle or (for deliberate accents) Bartle, never a bold
+// Zalando inherited from the theme. Specific title styles above choose Bartle.
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+// Semantic strong/bold text used as an interface label defaults to Bogle.
+// Do not rely on the browser's synthetic bold weight.
+strong,
+b {
+  font-family: $portfolio-heading-font;
+  font-weight: 400;
+}
+
+// Emphasis *within content* remains Zalando, but uses italics rather than
+// a bold weight. This covers Markdown strong emphasis and HTML <b> in posts.
+.page__content strong,
+.page__content b,
+.archive__item-excerpt strong,
+.archive__item-excerpt b,
+.author__bio strong,
+.author__bio b {
+  font-family: $portfolio-body-font;
+  font-weight: 400;
+  font-style: italic;
+}
+
+// Code is content too; avoid bold Zalando in highlighted code tokens.
+.highlight .gh,
+.highlight .gp,
+.highlight .gs,
+.highlight .gu,
+.archive__item-excerpt .ais-Highlight {
+  font-family: $portfolio-body-font;
+  font-weight: 400;
+}
+
+// Search highlights are UI, and can use Bogle for visual distinction.
+.search-content .ais-Highlight,
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  font-family: $portfolio-heading-font;
+  font-weight: 400;
+}
+
 // Leave some room for the two masthead labels on small screens.
 @media (max-width: 40em) {
   .greedy-nav .site-title {
