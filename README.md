@@ -44,11 +44,11 @@ Use these Cloudflare Pages settings:
 
 - Framework preset: Jekyll
 - Root directory: repository root
-- Build command: `bundle exec jekyll build --baseurl "" --url "$CF_PAGES_URL"`
+- Build command: `printf 'url: "%s"\\nbaseurl: ""\\n' "$CF_PAGES_URL" > _cloudflare.yml && bundle exec jekyll build --config _config.yml,_cloudflare.yml`
 - Build output directory: `_site`
 - Build environment variable: `RUBY_VERSION=3.1.3` (or another supported Ruby 3.1 release)
 
-Cloudflare automatically supplies `CF_PAGES_URL`, so canonical/sharing links point at the preview rather than the main site, and the empty `baseurl` makes asset paths work from the preview domain's root. The resulting `*.pages.dev` URL is separate from `https://smcateer.github.io/portfolio/`. The preview URL only exists **after** you connect and deploy the project.
+Cloudflare automatically supplies `CF_PAGES_URL`. The command writes a temporary configuration override because Jekyll 3.10 does not support the `--url` CLI flag. This ensures canonical/sharing links point at the preview and assets resolve from the preview domain's root. The resulting `*.pages.dev` URL is separate from `https://smcateer.github.io/portfolio/`. The preview URL only exists **after** you connect and deploy the project.
 
 This repo is a GitHub Pages **project site**: changing the default git branch is not the same as changing its Pages publishing source. Verify the actual Pages source in repository **Settings → Pages**.
 
