@@ -358,3 +358,21 @@ strong,b { font-weight: 400; font-style: italic; }
   color: var(--accent);
   text-shadow: 0 0 10px rgba(66,245,197,.35);
 }
+
+/* Light theme: a substantial mint underline gives links a clear hover
+   state without recolouring black text or turning it into a filled tile. */
+:root[data-theme="light"] .post-body a:hover,
+:root[data-theme="light"] .post-card-title a:hover,
+:root[data-theme="light"] .archive-list a:hover,
+:root[data-theme="light"] .related-posts a:hover,
+:root[data-theme="light"] .post-taxonomy a:hover,
+:root[data-theme="light"] .pagination a:hover,
+:root[data-theme="light"] .search-results a:hover,
+:root[data-theme="light"] .intro a:hover {
+  color: #000000;
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: .18em;
+  text-underline-offset: .13em;
+  text-decoration-skip-ink: none;
+}
