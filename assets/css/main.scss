@@ -122,6 +122,15 @@ samp,
   font-weight: 400;
 }
 
+
+// Related-post card titles use Bogle; the "You May Also Enjoy" signpost
+// above them remains Bartle via .page__related-title.
+.page__related .archive__item-title,
+.page__related .archive__item-title a {
+  font-family: $portfolio-heading-font;
+  font-weight: 400;
+}
+
 // Leave some room for the two masthead labels on small screens.
 @media (max-width: 40em) {
   .greedy-nav .site-title {
