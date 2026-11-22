@@ -251,7 +251,81 @@ strong,b { font-weight: 400; font-style: italic; }
 .footer-links { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 1.2rem; margin: 0; padding: 0; list-style: none; }
 .footer-links a { text-decoration: none; }
 
+
+/* Keep article media within the content column. A wide table or chart scrolls
+   inside its own region instead of stretching the document on mobile. */
+.post, .post-header, .post-body, .post-list, .post-card, .post-card-excerpt {
+  min-width: 0;
+  max-width: 100%;
+}
+.post-body img, .post-body picture, .post-body video {
+  max-width: 100%;
+  height: auto;
+}
+.post-body iframe, .post-body svg, .post-body canvas {
+  max-width: 100%;
+}
+.post-body p, .post-body li, .post-card-excerpt {
+  overflow-wrap: break-word;
+}
+.post-body .highlighter-rouge, .post-body .highlight {
+  min-width: 0;
+  max-width: 100%;
+}
+.content-scroll {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.25em 0;
+}
+.content-scroll:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -2px;
+}
+:root[data-theme="dark"] .content-scroll:focus-visible {
+  outline-color: var(--accent);
+}
+.content-scroll--table table {
+  display: table;
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.content-scroll--media > svg,
+.content-scroll--media > canvas,
+.content-scroll--media > iframe {
+  max-width: none;
+}
+/* Containers emitted by common chart libraries can carry their own
+   oversized internal SVG/canvas. Contain their scrolling locally. */
+.post-body .vega-embed,
+.post-body .plotly-graph-div,
+.post-body .highcharts-container,
+.post-body .chart-container,
+.post-body .observablehq,
+.post-body .mermaid {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 @media (max-width: 750px) {
+  /* Bartle is unusually wide: use a mobile scale, not the desktop minimum. */
+  .post-card-title {
+    font-size: clamp(1.05rem, 3.65vw, 1.45rem);
+    line-height: 1.16;
+  }
+  .post-title {
+    font-size: clamp(1.3rem, 4.6vw, 1.95rem);
+    line-height: 1.14;
+  }
+  .post-card-title, .post-title {
+    overflow-wrap: anywhere;
+  }
   .site-shell { grid-template-columns: 1fr; gap: 2rem; }
   .site-bio { max-width: 38rem; }
   .bio-photo { width: min(50%, 11rem); }
