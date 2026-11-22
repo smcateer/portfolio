@@ -131,6 +131,24 @@ samp,
   font-weight: 400;
 }
 
+// Social-link text beside the bio (LinkedIn, GitHub) uses Bogle.
+// Icon glyphs retain Font Awesome.
+.author__urls a .label {
+  font-family: $portfolio-heading-font;
+  font-weight: 400;
+}
+
+// "Tags:" and "Categories:" labels in article footers use Bogle.
+// The actual linked tag/category values remain Zalando.
+.page__taxonomy > strong {
+  font-family: $portfolio-heading-font;
+  font-weight: 400;
+}
+
+.page__taxonomy .page__taxonomy-item {
+  font-family: $portfolio-body-font;
+}
+
 // Leave some room for the two masthead labels on small screens.
 @media (max-width: 40em) {
   .greedy-nav .site-title {
