@@ -430,9 +430,33 @@ html, body {
   color: $site-black;
 }
 
-.author__avatar img {
+// Portrait follows the bio and fills the entire sidebar gutter,
+// with the social links directly below. No circular CSS crop or border.
+.sidebar .author__content {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.sidebar .author__avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1em 0 0;
+}
+
+.sidebar .author__avatar a {
+  display: block;
+}
+
+.sidebar .author__avatar img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
   padding: 0;
   border: 0;
+  border-radius: 0;
 }
 
 .sidebar .author__urls-wrapper {
