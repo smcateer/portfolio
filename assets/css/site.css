@@ -64,7 +64,9 @@ strong,b { font-weight: 400; font-style: italic; }
 }
 .skip-link:focus { top: .5rem; }
 
-.site-header, .site-footer { background: var(--bar); color: var(--bar-text); }
+.site-header, .site-footer { background: var(--bar); color: var(--bar-text); position: relative; }
+.site-header { z-index: 10; box-shadow: 0 5px 20px rgba(66,245,197,.25); }
+.site-footer { z-index: 2; box-shadow: 0 -5px 20px rgba(66,245,197,.25); }
 .header-inner, .footer-inner {
   width: 100%; max-width: 1480px; margin: auto;
   padding: .85rem clamp(1rem, 4.8vw, 5rem);
@@ -75,24 +77,42 @@ strong,b { font-weight: 400; font-style: italic; }
 .brand-portfolio { font: 400 clamp(1.1rem, 1.55vw, 1.45rem)/1.15 var(--display-font); }
 .brand-person { font: 400 clamp(1rem, 1.4vw, 1.3rem)/1.15 var(--ui-font); }
 .header-actions { display: flex; align-items: center; gap: 1.1rem; flex-shrink: 0; }
-.header-search, .colour-mode {
-  background: transparent; border: none; border-radius: 0;
+.header-search, .theme-toggle {
+  background: transparent; border: 0; border-radius: 0;
   padding: .25em .1em; color: var(--bar-text);
   font: 400 1rem/1.25 var(--ui-font);
 }
-.header-search:hover, .header-search[aria-expanded="true"] { text-decoration: underline; }
-.colour-mode {
-  padding-inline-end: .2rem; cursor: pointer;
-  appearance: auto;
+.header-search:hover, .header-search[aria-expanded="true"],
+.theme-toggle:hover { text-decoration: underline; }
+.theme-picker { position: relative; }
+.theme-toggle { display: inline-flex; align-items: center; gap: .5rem; white-space: nowrap; }
+.theme-toggle:focus-visible, .theme-option:focus-visible {
+  outline: 0; text-decoration: underline; text-underline-offset: .18em;
 }
-.colour-mode option { background: #000000; color: #42f5c5; }
+.theme-caret { font-size: 1rem; line-height: 1; }
+.theme-menu {
+  position: absolute; z-index: 50; inset-block-start: 0; inset-inline-end: 0;
+  display: flex; flex-direction: column; min-width: 100%;
+  background: #000000; color: #42f5c5;
+  box-shadow: 0 6px 16px rgba(66,245,197,.23);
+}
+.theme-menu[hidden] { display: none; }
+.theme-option {
+  width: 100%; border: 0; border-radius: 0; padding: .4rem .65rem;
+  text-align: left; white-space: nowrap;
+  font: 400 1rem/1.25 var(--ui-font);
+  color: #42f5c5; background: #000000;
+}
+.theme-option:hover, .theme-option[aria-checked="true"] {
+  color: #42f5c5; background: #000000; text-decoration: underline;
+}
 .site-header a:hover, .site-footer a:hover { text-decoration: underline; }
 .search-panel {
   background: var(--paper); border-bottom: 1px solid var(--rule);
 }
 .search-panel[hidden] { display: none; }
 .search-inner { max-width: 1480px; margin: 0 auto; padding: 1.3rem clamp(1rem,4.8vw,5rem); }
-.search-label { display: block; font: 400 1.2rem var(--ui-font); }
+.search-label { display: block; font: 400 1.05rem var(--ui-font); }
 #search-query {
   width: min(100%, 48rem); background: transparent; color: var(--ink);
   margin-top: .6rem; padding: .55rem 0; border: 0;
@@ -100,10 +120,15 @@ strong,b { font-weight: 400; font-style: italic; }
   font: 400 1.15rem var(--body-font);
 }
 #search-query::placeholder { color: var(--ink); opacity: .68; }
+#search-query:focus-visible { outline: 0; border-bottom: 2px solid var(--ink); }
+:root[data-theme="dark"] #search-query:focus-visible { border-bottom-color: var(--accent); }
 .search-status { margin: .7rem 0; font: 400 .95rem var(--ui-font); }
 .search-results { list-style: none; padding: 0; margin: .5rem 0 0; }
 .search-results li { margin: .4rem 0; }
-.search-results a { text-decoration: underline; text-underline-offset: .15em; }
+.search-results a, .search-results a:hover {
+  display: inline; border: 0; outline-offset: .18em;
+  background: none; text-decoration: none;
+}
 
 .site-shell {
   flex: 1; width: 100%; max-width: 1480px;
@@ -141,7 +166,7 @@ strong,b { font-weight: 400; font-style: italic; }
 .post-list { display: grid; grid-template-columns: 1fr; gap: 1.6rem; }
 .post-card { min-width: 0; padding-bottom: .6rem; }
 .post-card-title {
-  font: 400 clamp(1.55rem, 2.6vw, 2.15rem)/1.16 var(--display-font);
+  font: 400 clamp(1.4rem, 2.25vw, 1.9rem)/1.16 var(--display-font);
   margin: 0 0 .15em;
 }
 .post-card-title a, .related-posts a, .archive-list a {
@@ -151,7 +176,7 @@ strong,b { font-weight: 400; font-style: italic; }
   text-decoration: none;
 }
 .post-card-date, .post-date {
-  font: 400 .86rem/1.5 var(--ui-font); margin: .35rem 0 1rem;
+  font: 400 1rem/1.45 var(--ui-font); margin: .35rem 0 1rem;
 }
 .post-card-excerpt { line-height: 1.55; }
 .post-card-excerpt p { margin-bottom: 0; }
@@ -163,7 +188,7 @@ strong,b { font-weight: 400; font-style: italic; }
 .pagination a { text-decoration: underline; text-underline-offset: .15em; }
 .post-header { margin-bottom: 1rem; }
 .post-title {
-  font: 400 clamp(2rem, 3.5vw, 3rem)/1.08 var(--display-font);
+  font: 400 clamp(1.75rem, 3vw, 2.55rem)/1.08 var(--display-font);
   margin: 0 0 .55rem;
 }
 .post-body h1,.post-body h2,.post-body h3,
@@ -176,12 +201,25 @@ strong,b { font-weight: 400; font-style: italic; }
 }
 .post-body blockquote p:last-child { margin-bottom: 0; }
 .post-body img { height: auto; }
-.post-body pre, .post-body code {
-  background: var(--paper); color: var(--ink); font: 400 .9em/1.5 var(--body-font);
+/* Markdown fenced code blocks (including Diophantine Footy 2) render
+   as .highlighter-rouge > .highlight > pre > code. */
+.post-body pre,
+.post-body pre code {
+  background: #000000;
+  color: #42f5c5;
+  font: 400 .92rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
-.post-body pre { padding: 1em; border: 1px solid var(--rule); overflow-x: auto; }
+.post-body pre {
+  padding: 1rem; border: 1px solid #000000; border-radius: 0;
+  overflow-x: auto; white-space: pre;
+}
 .post-body pre code { border: 0; padding: 0; }
-.post-body :not(pre) > code { border-bottom: 1px solid var(--rule); }
+:root[data-theme="dark"] .post-body pre { border-color: #42f5c5; }
+.post-body :not(pre) > code {
+  background: var(--paper); color: var(--ink);
+  font: 400 .92em/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  border-bottom: 1px solid var(--rule);
+}
 .post-body table { border-collapse: collapse; width: 100%; margin: 1.25em 0; }
 .post-body th, .post-body td {
   border-bottom: 1px solid var(--rule);
@@ -229,4 +267,16 @@ strong,b { font-weight: 400; font-style: italic; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+/* Mint hover light on dark backgrounds, excluding solid social/share tiles. */
+:root[data-theme="dark"] .post-body a:hover,
+:root[data-theme="dark"] .post-card-title a:hover,
+:root[data-theme="dark"] .archive-list a:hover,
+:root[data-theme="dark"] .related-posts a:hover,
+:root[data-theme="dark"] .post-taxonomy a:hover,
+:root[data-theme="dark"] .pagination a:hover,
+:root[data-theme="dark"] .search-results a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(66,245,197,.35);
 }

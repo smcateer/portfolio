@@ -6,12 +6,17 @@
     </a>
     <nav class="header-actions" aria-label="Site controls">
       <button class="header-search" type="button" id="search-toggle" aria-expanded="false" aria-controls="site-search">Search</button>
-      <label for="colour-mode" class="visually-hidden">Colour scheme</label>
-      <select id="colour-mode" class="colour-mode" aria-label="Colour scheme">
-        <option value="light">Light</option>
-        <option value="system">System</option>
-        <option value="dark">Dark</option>
-      </select>
+      <div class="theme-picker">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu" aria-label="Colour scheme: Light">
+          <span id="theme-toggle-label">Light</span>
+          <span class="theme-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div id="theme-menu" class="theme-menu" role="menu" aria-label="Colour scheme" hidden>
+          <button type="button" class="theme-option" role="menuitemradio" aria-checked="true" data-theme-choice="light">Light</button>
+          <button type="button" class="theme-option" role="menuitemradio" aria-checked="false" data-theme-choice="system">System</button>
+          <button type="button" class="theme-option" role="menuitemradio" aria-checked="false" data-theme-choice="dark">Dark</button>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
