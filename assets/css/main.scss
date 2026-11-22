@@ -1,0 +1,58 @@
+---
+# Compile this stylesheet with Jekyll, overriding the Minimal Mistakes theme.
+search: false
+---
+
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=BBH+Bartle&family=BBH+Bogle&family=Zalando+Sans+SemiExpanded:wght@400;500;600;700&display=swap");
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+// Site-wide typography: Zalando for ordinary text and navigation.
+$portfolio-body-font: "Zalando Sans SemiExpanded", sans-serif;
+$portfolio-heading-font: "BBH Bogle", sans-serif;
+$portfolio-post-title-font: "BBH Bartle", sans-serif;
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+.greedy-nav,
+.masthead__menu-item,
+.page__meta,
+.page__date,
+.page__content p,
+.page__content li,
+.author__bio {
+  font-family: $portfolio-body-font;
+}
+
+// Branding and secondary headings.
+.site-title,
+.site-subtitle,
+.author__name,
+.page__content h2,
+.page__content h3,
+.page__content h4,
+.page__content h5,
+.page__content h6,
+.archive__subtitle,
+.taxonomy__title,
+.sidebar h2,
+.sidebar h3 {
+  font-family: $portfolio-heading-font;
+  font-weight: 400;
+}
+
+// Full post/page titles, including archive listing links.
+.page__title,
+.page__title a,
+.archive__item-title,
+.archive__item-title a {
+  font-family: $portfolio-post-title-font;
+  font-weight: 400;
+}
