@@ -430,8 +430,8 @@ html, body {
   color: $site-black;
 }
 
-// Portrait follows the bio and fills the entire sidebar gutter,
-// with the social links directly below. No circular CSS crop or border.
+// Portrait precedes the bio, left-aligned at half the gutter width.
+// Keep its natural aspect ratio and the original image's transparent corners.
 .sidebar .author__content {
   display: block;
   width: 100%;
@@ -440,9 +440,11 @@ html, body {
 
 .sidebar .author__avatar {
   display: block;
-  width: 100%;
+  width: 50%;
   height: auto;
-  margin: 1em 0 0;
+  margin: 0 0 1em 0;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
 }
 
 .sidebar .author__avatar a {
