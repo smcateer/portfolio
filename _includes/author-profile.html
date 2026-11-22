@@ -15,9 +15,6 @@
   <div class="author__content">
     <meta itemprop="name" content="{{ author.name | escape }}">
     <span class="p-name visually-hidden">{{ author.name | escape }}</span>
-    <h3 class="author__name">
-      <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">bio</a>
-    </h3>
     {% if author.bio %}
       <div class="author__bio p-note" itemprop="description">
         {{ author.bio | markdownify }}
