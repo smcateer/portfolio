@@ -17,4 +17,12 @@ I've just given it a fairly thorough overhaul. The two separate bars have become
 
 It now keeps track of who's at the table, what's on, fouls, free balls and the final colours. The whole thing is still unashamedly vibe-coded—Copilot for the original, ChatGPT for the rebuild—but this time I've also put the logic through an automated browser test suite.
 
-[Try the updated scoreboard](https://smcateer.github.io/snooker-scoerboard/scorecard.html) or [have a look at the code and tests](https://github.com/smcateer/snooker-scoerboard).
+<iframe
+  src="https://smcateer.github.io/snooker-scoerboard/scorecard.html"
+  title="Interactive snooker scoreboard"
+  loading="lazy"
+  style="display:block; width:100%; height:clamp(600px,82vh,780px); border:0; border-radius:12px; background:#080e12;"
+  allowfullscreen>
+</iframe>
+
+[Open the scoreboard in its own window](https://smcateer.github.io/snooker-scoerboard/scorecard.html) or [have a look at the code and tests](https://github.com/smcateer/snooker-scoerboard).
