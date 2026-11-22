@@ -21,7 +21,7 @@ It now keeps track of who's at the table, what's on, fouls, free balls and the f
   src="https://smcateer.github.io/snooker-scoerboard/scorecard.html"
   title="Interactive snooker scoreboard"
   loading="lazy"
-  style="display:block; width:100%; height:clamp(600px,82vh,780px); border:0; border-radius:12px; background:#080e12;"
+  style="display:block; width:100%; height:clamp(420px,57.4vh,546px); border:0; border-radius:12px; background:#080e12;"
   allowfullscreen>
 </iframe>
 
