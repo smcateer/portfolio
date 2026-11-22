@@ -1,9 +1,12 @@
-{% comment %}Quiet, icon-free footer: copyright and right-aligned site navigation.{% endcomment %}
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} Stephen McAteer</div>
-<nav class="page__footer-follow page__footer-nav" aria-label="Footer navigation">
-  <ul>
-    <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
-    <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
-    <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
-  </ul>
-</nav>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="copyright">&copy; {{ site.time | date: '%Y' }} Stephen McAteer</div>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links">
+        <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
+        <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>

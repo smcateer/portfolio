@@ -1,0 +1,14 @@
+{% if page.tags.size > 0 or page.categories.size > 0 %}
+<footer class="post-taxonomy">
+  {% if page.tags.size > 0 %}
+    <p><span class="taxonomy-label">Tags:</span>
+      {% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag | escape }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+    </p>
+  {% endif %}
+  {% if page.categories.size > 0 %}
+    <p><span class="taxonomy-label">Categories:</span>
+      {% for category in page.categories %}<a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ category | escape }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+    </p>
+  {% endif %}
+</footer>
+{% endif %}

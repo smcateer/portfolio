@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<h1 class="section-signpost">{{ page.title | default: "Tags" }}</h1>
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+  <section class="archive-group" id="{{ tag[0] | slugify }}">
+    <h2 class="archive-group-title">{{ tag[0] | escape }}</h2>
+    <ul class="archive-list">
+      {% for post in tag[1] %}
+        <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endfor %}

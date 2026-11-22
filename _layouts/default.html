@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>{% if page.title %}{{ page.title | strip_html | escape }} | {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | escape }}">
+  <link rel="icon" href="{{ site.favicon | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=BBH+Bogle&family=Zalando+Sans+SemiExpanded:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script>
+    // Set the theme before first paint. Light is always the default.
+    (function () {
+      var choice = 'light';
+      try {
+        var stored = localStorage.getItem('portfolio-colour-mode');
+        if (['light', 'system', 'dark'].indexOf(stored) !== -1) choice = stored;
+      } catch (e) {}
+      var dark = choice === 'dark' || (choice === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.colourMode = choice;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    }());
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  {% include search.html %}
+  <div class="site-shell">
+    {% unless page.author_profile == false %}
+      {% include bio.html %}
+    {% endunless %}
+    <main id="main" class="site-main" tabindex="-1">
+      {{ content }}
+    </main>
+  </div>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+</body>
+</html>

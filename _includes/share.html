@@ -1,0 +1,10 @@
+<section class="share-block" aria-label="Share this post">
+  <h2 class="section-signpost">Share on</h2>
+  <div class="share-links social-links">
+    <a href="https://x.com/intent/tweet?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer">X</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://bsky.app/intent/compose?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer">Bluesky</a>
+    <a href="https://www.reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | strip_html | url_encode }}&amp;type=LINK" target="_blank" rel="noopener noreferrer">Reddit</a>
+  </div>
+</section>

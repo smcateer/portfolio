@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<h1 class="section-signpost">{{ page.title | default: "Posts" }}</h1>
+{% assign years = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
+{% for year in years %}
+  <section class="archive-group" id="{{ year.name }}">
+    <h2 class="archive-group-title">{{ year.name }}</h2>
+    <ul class="archive-list">
+      {% for post in year.items %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %-d' }}</time></li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endfor %}

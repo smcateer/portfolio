@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% if content != "" %}<div class="intro">{{ content }}</div>{% endif %}
+<h1 class="section-signpost home-signpost">Recent Posts</h1>
+{% assign current_posts = paginator.posts | default: site.posts %}
+<div class="post-list">
+{% for post in current_posts %}
+  {% include post-card.html post=post %}
+{% endfor %}
+</div>
+{% if paginator and paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="Pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
+  {% endif %}
+  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
+  {% endif %}
+</nav>
+{% endif %}

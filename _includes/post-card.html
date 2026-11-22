@@ -1,0 +1,6 @@
+{% assign post = include.post %}
+<article class="post-card">
+  <h2 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+  <p class="post-card-date"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %-d, %Y' }}</time></p>
+  {% if post.excerpt %}<div class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 45 }}</div>{% endif %}
+</article>

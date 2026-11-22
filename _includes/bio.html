@@ -1,0 +1,15 @@
+<aside class="site-bio" aria-label="About Stephen McAteer">
+  {% if site.author.avatar %}
+    <img class="bio-photo" src="{{ site.author.avatar | relative_url }}" alt="Stephen McAteer" width="675" height="675" loading="lazy">
+  {% endif %}
+  <div class="bio-copy">{{ site.author.bio | markdownify }}</div>
+  {% if site.author.links %}
+    <ul class="social-links" aria-label="Social media">
+      {% for link in site.author.links %}
+        {% if link.url and link.label %}
+          <li><a href="{{ link.url }}" rel="noopener noreferrer me">{{ link.label | escape }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</aside>

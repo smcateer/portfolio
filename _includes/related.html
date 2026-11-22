@@ -1,0 +1,15 @@
+{% assign related_count = 0 %}
+{% capture related_posts %}
+  {% for post in site.posts %}
+    {% if post.url != page.url and related_count < 4 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+      {% assign related_count = related_count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+{% if related_count > 0 %}
+<section class="related-posts">
+  <h2 class="section-signpost">You May Also Enjoy</h2>
+  <ul>{{ related_posts }}</ul>
+</section>
+{% endif %}
