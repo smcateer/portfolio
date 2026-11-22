@@ -21,6 +21,60 @@ $global-font-family: $portfolio-body-font;
 $header-font-family: $portfolio-heading-font;
 $caption-font-family: $portfolio-body-font;
 
+// Only three colours in the site chrome: absolute black, absolute white,
+// and a mint accent. No softened blacks, greys, or tinted backgrounds.
+$site-black: #000000;
+$site-white: #ffffff;
+$site-accent: #42f5c5;
+
+// Override Minimal Mistakes' palette BEFORE importing the theme.
+$gray: $site-black;
+$dark-gray: $site-black;
+$darker-gray: $site-black;
+$light-gray: $site-white;
+$lighter-gray: $site-white;
+
+$background-color: $site-white;
+$code-background-color: $site-white;
+$code-background-color-dark: $site-white;
+$text-color: $site-black;
+$muted-text-color: $site-black;
+$border-color: $site-black;
+$form-background-color: $site-white;
+$footer-background-color: $site-black;
+$primary-color: $site-black;
+$success-color: $site-black;
+$warning-color: $site-black;
+$danger-color: $site-black;
+$info-color: $site-black;
+$focus-color: $site-black;
+$active-color: $site-black;
+$link-color: $site-black;
+$link-color-hover: $site-black;
+$link-color-visited: $site-black;
+$masthead-link-color: $site-accent;
+$masthead-link-color-hover: $site-accent;
+$navicon-link-color-hover: $site-black;
+$box-shadow: none;
+
+// No multicoloured syntax highlighting in site-rendered code blocks.
+$base00: $site-white;
+$base01: $site-white;
+$base02: $site-white;
+$base03: $site-black;
+$base04: $site-black;
+$base05: $site-black;
+$base06: $site-white;
+$base07: $site-white;
+$base08: $site-black;
+$base09: $site-black;
+$base0a: $site-black;
+$base0b: $site-black;
+$base0c: $site-black;
+$base0d: $site-black;
+$base0e: $site-black;
+$base0f: $site-black;
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
@@ -257,4 +311,381 @@ b {
     font-size: 0.9em;
     column-gap: 0.3em;
   }
+}
+
+
+/* ==========================================================================
+   Monochrome / mint design system
+   Black: #000000    White: #ffffff    Accent: #42f5c5
+   ========================================================================== */
+
+:root { color-scheme: light; }
+
+html, body {
+  background: $site-white;
+  color: $site-black;
+}
+
+// The masthead and footer are the only full-width coloured surfaces.
+.masthead {
+  background: $site-black;
+  border-bottom: 1px solid $site-black;
+}
+
+.masthead .masthead__inner-wrap {
+  padding-block: 0.85em;
+}
+
+.masthead .greedy-nav {
+  background: $site-black;
+}
+
+.greedy-nav .site-title,
+.greedy-nav .site-title:visited,
+.greedy-nav .site-title:hover,
+.greedy-nav .site-title__portfolio,
+.greedy-nav .site-title__person,
+.greedy-nav .site-subtitle,
+.greedy-nav .search__toggle {
+  color: $site-accent;
+}
+
+.greedy-nav .search__toggle {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.greedy-nav .search__toggle:hover {
+  color: $site-white;
+  text-decoration: underline;
+}
+
+// There are no more masthead menu entries, so no overflow hamburger is needed.
+.greedy-nav .greedy-nav__toggle {
+  display: none !important;
+}
+
+.page__footer {
+  background: $site-black;
+  color: $site-accent;
+  border-top: 1px solid $site-black;
+}
+
+.page__footer footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.65em 2em;
+  margin-top: 0;
+  padding-block: 1.35em;
+}
+
+.page__footer-copyright,
+.page__footer-follow,
+.page__footer-follow li,
+.page__footer a,
+.page__footer a:visited,
+.page__footer a:hover {
+  color: $site-accent;
+}
+
+.page__footer-follow ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em 1.25em;
+}
+
+.page__footer-follow li {
+  display: inline-block;
+  padding: 0;
+}
+
+.page__footer-follow a {
+  padding: 0;
+  text-decoration: none;
+}
+
+.page__footer-follow a:hover,
+.page__footer-follow a:focus-visible {
+  text-decoration: underline;
+}
+
+// No faint grey sidebar, softened text, shadows or pale decorative cards.
+.sidebar {
+  opacity: 1 !important;
+}
+
+.sidebar p,
+.sidebar li,
+.page__meta,
+.page__date,
+.archive__subtitle,
+.taxonomy__title,
+.taxonomy__count,
+.archive__item-excerpt,
+.page__related,
+.breadcrumbs {
+  color: $site-black;
+}
+
+.author__avatar img {
+  padding: 0;
+  border: 0;
+}
+
+.sidebar .author__urls-wrapper {
+  display: block;
+  position: static;
+  margin-top: 0.75em;
+  cursor: auto;
+}
+
+.sidebar .author__urls-wrapper > button {
+  display: none !important;
+}
+
+// Plain black social-link tiles, accent text. Always visible on mobile,
+// rather than being concealed behind the theme's "Follow" control.
+.sidebar .author__urls {
+  display: flex !important;
+  flex-wrap: wrap;
+  position: static;
+  gap: 0.45em;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  list-style: none;
+}
+
+.sidebar .author__urls::before,
+.sidebar .author__urls::after {
+  display: none;
+}
+
+.sidebar .author__urls li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .author__urls a,
+.sidebar .author__urls a:visited {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35em 0.65em;
+  background: $site-black;
+  color: $site-accent;
+  text-decoration: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.sidebar .author__urls a:hover {
+  color: $site-white;
+  text-decoration: underline;
+}
+
+.sidebar .author__urls a .label {
+  padding-inline-start: 0;
+}
+
+// Social, taxonomy and reading-time icons are redundant next to text.
+.sidebar .author__urls i,
+.page__taxonomy i,
+.page__meta i,
+.page__date i,
+.page__share i,
+.page__footer i {
+  display: none !important;
+}
+
+// Ordinary links: black, underlined only where they need affordance.
+// Clickable post and section headings stay black without underlines.
+a,
+a:visited,
+a:hover {
+  color: $site-black;
+}
+
+.page__content p a,
+.page__content li a,
+.author__bio a,
+.archive__item-excerpt a,
+.taxonomy__index a {
+  color: $site-black;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.page__title a,
+.archive__item-title a,
+.page__content h1 a,
+.page__content h2 a,
+.page__content h3 a,
+.page__content h4 a,
+.page__content h5 a,
+.page__content h6 a,
+.page__related .archive__item-title a {
+  color: $site-black;
+  text-decoration: none;
+}
+
+.page__title a:hover,
+.archive__item-title a:hover,
+.page__content h1 a:hover,
+.page__content h2 a:hover,
+.page__content h3 a:hover,
+.page__content h4 a:hover,
+.page__content h5 a:hover,
+.page__content h6 a:hover {
+  color: $site-black;
+  text-decoration: none;
+}
+
+// Minimal taxonomy values: no outlined pills or colour fills.
+.page__taxonomy .page__taxonomy-item {
+  padding: 0;
+  margin-inline-end: 0.85em;
+  background: transparent;
+  color: $site-black;
+  border: none;
+  border-radius: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.page__taxonomy .page__taxonomy-item:hover {
+  color: $site-black;
+}
+
+// Black rules, never grey/tinted separators.
+hr {
+  border: 0;
+  border-bottom: 1px solid $site-black;
+}
+
+.archive__subtitle,
+.taxonomy__section,
+.page__related {
+  border-color: $site-black;
+}
+
+// Controls, pagination, search, notice boxes, and tables remain monochrome.
+.pagination li a,
+.pagination--pager,
+.nav__list label,
+.toc,
+.toc .nav__title,
+.notice,
+[class*="notice--"],
+input,
+select,
+textarea {
+  color: $site-black;
+  background: $site-white;
+  border-color: $site-black;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pagination li a:hover,
+.pagination--pager:hover {
+  background: $site-black;
+  color: $site-white;
+}
+
+.pagination .current,
+.pagination li.active a,
+.pagination li.current a {
+  color: $site-white;
+  background: $site-black;
+}
+
+.search-content {
+  background: $site-white;
+  color: $site-black;
+}
+
+.search-content .search-input,
+.search-content .search-input::placeholder {
+  color: $site-black;
+  opacity: 1;
+}
+
+table,
+th,
+td,
+thead {
+  background: $site-white;
+  color: $site-black;
+  border-color: $site-black;
+}
+
+blockquote {
+  background: $site-white;
+  color: $site-black;
+  border-inline-start: 2px solid $site-black;
+}
+
+code, kbd, samp, pre,
+div.highlighter-rouge,
+figure.highlight,
+.highlight pre {
+  background: $site-white;
+  color: $site-black;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+div.highlighter-rouge,
+figure.highlight {
+  border: 1px solid $site-black;
+}
+
+.highlight span {
+  color: $site-black !important;
+}
+
+// The share row is text-only, not branded coloured buttons.
+.page__share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.25em;
+}
+
+.page__share-links a,
+.page__share-links a:visited,
+.page__share-links a:hover {
+  font-family: $portfolio-heading-font;
+  font-weight: 400;
+  color: $site-black;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+// Keep the mint out of large text passages. Use it only for obvious,
+// high-contrast keyboard focus against white/black surfaces.
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid $site-black;
+  outline-offset: 3px;
+}
+
+.masthead a:focus-visible,
+.masthead button:focus-visible,
+.page__footer a:focus-visible,
+.sidebar .author__urls a:focus-visible {
+  outline-color: $site-accent;
+}
+
+@media (max-width: 40em) {
+  .page__footer footer { align-items: flex-start; }
 }

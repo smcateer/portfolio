@@ -1,0 +1,13 @@
+{% comment %}Quiet, icon-free footer. The masthead carries the site branding.{% endcomment %}
+<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} Stephen McAteer</div>
+{% if site.footer.links %}
+<nav class="page__footer-follow" aria-label="Social media">
+  <ul>
+    {% for link in site.footer.links %}
+      {% if link.label and link.url %}
+        <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer{% if link.rel %} {{ link.rel }}{% endif %}">{{ link.label | escape_once | strip }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
