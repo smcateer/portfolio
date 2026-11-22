@@ -2,7 +2,6 @@
 layout: default
 ---
 {% if content != "" %}<div class="intro">{{ content }}</div>{% endif %}
-<h1 class="section-signpost home-signpost">Recent Posts</h1>
 {% assign current_posts = paginator.posts | default: site.posts %}
 <div class="post-list">
 {% for post in current_posts %}
