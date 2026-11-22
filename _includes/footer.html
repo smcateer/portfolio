@@ -1,13 +1,9 @@
-{% comment %}Quiet, icon-free footer. The masthead carries the site branding.{% endcomment %}
+{% comment %}Quiet, icon-free footer: copyright and right-aligned site navigation.{% endcomment %}
 <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} Stephen McAteer</div>
-{% if site.footer.links %}
-<nav class="page__footer-follow" aria-label="Social media">
+<nav class="page__footer-follow page__footer-nav" aria-label="Footer navigation">
   <ul>
-    {% for link in site.footer.links %}
-      {% if link.label and link.url %}
-        <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer{% if link.rel %} {{ link.rel }}{% endif %}">{{ link.label | escape_once | strip }}</a></li>
-      {% endif %}
-    {% endfor %}
+    <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
+    <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
+    <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
   </ul>
 </nav>
-{% endif %}

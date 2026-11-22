@@ -650,22 +650,64 @@ figure.highlight {
   color: $site-black !important;
 }
 
-// The share row is text-only, not branded coloured buttons.
+// Share links match the black-and-mint social tiles in the bio.
 .page__share-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em 1.25em;
+  gap: 0.45em;
 }
 
 .page__share-links a,
-.page__share-links a:visited,
+.page__share-links a:visited {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35em 0.65em;
+  font-family: $portfolio-heading-font;
+  font-size: $type-size-6;
+  font-weight: 400;
+  color: $site-accent;
+  background: $site-black;
+  text-decoration: none;
+  border: 0;
+  border-radius: 0;
+}
+
 .page__share-links a:hover {
+  color: $site-white;
+  background: $site-black;
+  text-decoration: underline;
+}
+
+.page__share-links a:focus-visible {
+  outline-color: $site-black;
+}
+
+// Keep the footer's three navigation links at the far right.
+.page__footer-nav {
+  margin-inline-start: auto;
+  text-align: right;
+}
+
+.page__footer-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75em 1.25em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page__footer-nav a,
+.page__footer-nav a:visited {
   font-family: $portfolio-heading-font;
   font-weight: 400;
-  color: $site-black;
-  background: transparent;
+  color: $site-accent;
+  text-decoration: none;
+}
+
+.page__footer-nav a:hover {
   text-decoration: underline;
-  text-underline-offset: 0.14em;
 }
 
 // Keep the mint out of large text passages. Use it only for obvious,
